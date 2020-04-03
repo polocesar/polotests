@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "webdriver-manager update",
-    "start": "webdriver-manager start"
+    "start": "webdriver-manager start --detach"
   },
   "keywords": [],
   "author": "",
@@ -15,5 +15,8 @@
     "jasmine-fail-fast": "^2.0.1",
     "protractor": "^5.4.3",
     "protractor-beautiful-reporter": "^1.3.6"
+  },
+  "devDependencies": {
+    "jasmine-spec-reporter": "^5.0.1"
   }
 }
