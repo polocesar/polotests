@@ -1,4 +1,5 @@
 var loginPage = require('../page-objects/loginPage.po');
+var mainPage = require('../page-objects/mainPage.po');
 
 describe('Login Test Suite', function() {
    
@@ -19,7 +20,7 @@ describe('Login Test Suite', function() {
             await loginPage.verifyErrorMsg();
         });
     });
-    describe('Fluxo feliz: ', () => {
+    describe('Fluxo feliz - Login: ', () => {
         it('Preenchendo login...', async() => {
             await loginPage.fillLogin();
         });
@@ -28,6 +29,11 @@ describe('Login Test Suite', function() {
         });
         it('Logando...', async() => {
             await loginPage.clickToLogin();
+        });
+    });
+    describe('Página principal: ', () => {
+        it('Verificando se a página principal foi disponibilizada...', async() => {
+            await mainPage.checkDashVisibility();
         });
     });
     

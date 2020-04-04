@@ -3,10 +3,10 @@ var EC = protractor.ExpectedConditions;
 
 var loginPage = function() {
     
-    var loginField = element.all(by.id('login')).first();
-    var passwordField = element.all(by.id('password')).first();
+    var loginField = element.all(by.css('#email')).first();
+    var passwordField = element.all(by.css('#password')).first();
     var errorMsg = element(by.id('error'));
-    var acessarBtn = element(by.css('[type="submit"]'));
+    var acessarBtn = element(by.id('submit_buttom_form'));
     
     this.visit = async() => {
         await browser.waitForAngularEnabled(false);
@@ -15,11 +15,13 @@ var loginPage = function() {
 
     this.fillLogin = async() => {
         await browser.wait(EC.visibilityOf(loginField));
+        await loginField.clear();
         await loginField.sendKeys('admin@hotmail.com');
     };
 
     this.fillPassword = async() => {
         await browser.wait(EC.visibilityOf(passwordField));
+        await passwordField.clear();
         await passwordField.sendKeys('admin');
     };
 
